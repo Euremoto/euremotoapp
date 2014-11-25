@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Job, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  describe ".confirmed?" do
+    let(:confirmed) { FactoryGirl.build(:confirmed_job) }
+    it do
+      # pry.bindding
+      expect(confirmed).to be_confirmed
+    end
+  end
+
 end

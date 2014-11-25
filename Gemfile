@@ -26,6 +26,10 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'foreman'
   gem 'sqlite3'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'pry'
+  gem 'pry-doc'
 end
 
 # Use ActiveModel has_secure_password
