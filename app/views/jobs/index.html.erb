@@ -1,3 +1,6 @@
+<section class="euremoto">
+  <p>O EuRemoto.com é o melhor lugar para você encontrar</p>
+</section>
 <section class="jobs">
   <article>
     <h2>Vagas para Programadores</h2>
@@ -8,7 +11,7 @@
         <%= link_to job_path(job) do %>
           <span class="company"><%= job.company_name %></span>
           <span class="title"><%= job.title %></span>
-          <span class="date"><%= l job.created_at, format: :short %></span>
+          <span class="date"><%= l job.created_at, format: :home %></span>
         <% end %>
       </li>
       <% end %>
