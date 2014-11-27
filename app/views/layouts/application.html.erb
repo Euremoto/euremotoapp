@@ -47,7 +47,13 @@
     </nav>
 
     <section id="content">
-      <%= yield %>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-6 col-md-1"></div>
+          <div class="col-xs-6 col-md-10"><%= yield %></div>
+          <div class="col-xs-6 col-md-1"></div>
+        </div>
+      </div>
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
