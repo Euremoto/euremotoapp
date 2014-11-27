@@ -16,3 +16,78 @@ section#content {
     color: #5bc0de;
   }
 }
+
+section.jobs article {
+  clear: both;
+  margin-bottom: 50px;
+  h2 {
+    color: #ff8b43;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    padding-left: 10px;
+    font-size: 23px;
+
+    span {
+      color: #666;
+      font-size: 0.8rem;
+      letter-spacing: normal;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      font-size: 22px;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      a {
+        text-decoration: none;
+        display: block;
+      }
+
+      span.new {
+        float: left;
+        position: relative;
+        left: -50px;
+        top: 3px;
+        background-color: #455161;
+        font-weight: bold;
+        color: white;
+        font-size: 10px;
+        text-transform: uppercase;
+        margin: 0;
+        margin-right: -35px;
+        padding: 3px 5px;
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        font-family: FuturaBT-bold;
+      }
+
+      span.date {
+        float: right;
+        color: #AA9C84;
+      }
+
+      span.company {
+        color: black;
+        font-family: FuturaBT-bold;
+        margin-right: 10px;
+      }
+
+      span.title {
+        font-size: 20px;
+        text-decoration: underline;
+      }
+    }
+
+    li.feature {
+      background-color: #ffc;
+    }
+  }
+
+}

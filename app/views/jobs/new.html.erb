@@ -6,13 +6,14 @@
 <h1>Vamos Contratar?</h1>
 <h4>Para isso precisamos de algumas informações.</h4>
 
-<% if @job.errors %>
+<% if @job.errors.any? %>
+  <%= @job.errors.inspect %>
   <div class="alert alert-danger" role="alert">Ops ... Precisamos corrigir alguns coisas ...</div>
 <% end %>
 
 <%= simple_form_for @job, html: {class: 'form-horizontal'} do |f| %>
-  <%= f.input :title, label: 'Título da vaga', placeholder: "Ex.: Desenvolvedor Ruby" %>
-  <%= f.input :tag, label: 'Categoria', as: :radio_buttons, collection: [['Programação', 'programming'],['Designer', 'designer'], ['Executivo', 'exec'], ['Administrador de Sistemas', 'sysadmin'], ['Suporte', 'support'],['Redator', 'copywriter'], ['Outros', 'others']], checked: ['Programação', 'programming'] %>
+  <%= f.input :title, label: 'Título da vaga', placeholder: "Ex.: Desenvolvedor Ruby", input_html: { class: 'input-lg' } %>
+  <% f.input :type, label: 'Categoria', as: :radio_buttons, collection: [['Programação', 'programming'],['Designer', 'designer'], ['Executivo', 'exec'], ['Administrador de Sistemas', 'sysadmin'], ['Suporte', 'support'],['Redator', 'copywriter'], ['Outros', 'others']], checked: ['Programação', 'programming'] %>
   <%= f.input :headquartes, label: 'Matriz', placeholder: 'Ex.: São Paulo, SP' %>
   <%= f.input :description, label: 'Descrição da vaga', as: :text %>
   <%= f.input :apply, label: 'Como se candidatar', placeholder: 'Ex.: `seu-email@seu-dominio.com` ou `www.seusite.com.br/candatar-se`' %>
@@ -23,9 +24,11 @@
 
   <%= f.input :company_name, label: 'Nome da empresa', placeholder: 'Informe o nome da sua empresa'  %>
   <%= f.input :url, label: 'Site', placeholder: 'Ex.: www.google.com' %>
+  <%= f.input :company_email, label: 'E-mail', placeholder: 'seu-email@seu-dominio.com' %>
 
-  <%= f.button :submit, "Revisar e Publicar" %>
+  <%= f.button :submit, "Revisar e Publicar", class: 'btn-success input-lg' %>
 <% end %>
-<%# render 'form' %>
 
-<%= link_to 'Back', jobs_path %>
+<div class="pull-right">
+  <%= link_to 'Desistir', jobs_path %>
+</div>

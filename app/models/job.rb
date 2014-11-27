@@ -1,9 +1,10 @@
 class Job < ActiveRecord::Base
   has_and_belongs_to_many :tags
 
-  default_scope { where "confirm IS NOT NULL" }
+  # default_scope { where("confirm IS NOT NULL") }
+  scope :programmers, -> { where("type = 'programming'") }
 
-  validates_presence_of :title, :description, :type, :apply
+  validates_presence_of :title, :description, :apply, :company_name, :company_email
 
   before_save :generate_token
 

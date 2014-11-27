@@ -23,8 +23,6 @@ gem 'simple_form'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-
-
 group :production do
   gem 'pg'
 end
@@ -47,6 +45,3 @@ end
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
