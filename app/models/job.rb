@@ -1,4 +1,6 @@
 class Job < ActiveRecord::Base
+  has_and_belongs_to_many :tags
+
   default_scope { where "confirm IS NOT NULL" }
 
   validates_presence_of :title, :description, :type, :apply
