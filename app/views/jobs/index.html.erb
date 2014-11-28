@@ -4,7 +4,7 @@
     <ul>
       <% @programmers.each do |job| %>
       <li>
-        <span class="new">New</span>
+        <% if new_job? job %><span class="new">Novo</span><% end %>
         <%= link_to job_path(job) do %>
           <span class="company"><%= job.company_name %></span>
           <span class="title"><%= job.title %></span>

@@ -5,8 +5,8 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     @jobs = Job.all
-    @programmers = Job.programmers
-    @designers = Job.designers
+    @programmers = Job.programmers.limit(5)
+    @designers = Job.designers.limit(5)
   end
 
 
