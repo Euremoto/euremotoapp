@@ -48,6 +48,19 @@
 
     <section id="content">
       <div class="container-fluid">
+
+        <div class="row">
+          <section class="search">
+            <%= simple_form_for "/search" do |f| %>
+              <div class="box">
+                <div class="container-4">
+                  <%= f.input :q, label: false, placeholder: "buscar", input_html: {type: "search", id:"search"} %>
+                </div>
+              </div>
+            <% end %>
+          </section>
+        </div>
+
         <div class="row">
           <div class="col-xs-6 col-md-1"></div>
           <div class="col-xs-6 col-md-10"><%= yield %></div>

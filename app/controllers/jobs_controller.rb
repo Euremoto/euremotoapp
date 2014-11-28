@@ -6,6 +6,7 @@ class JobsController < ApplicationController
   def index
     @jobs = Job.all
     @programmers = Job.programmers
+    @designers = Job.designers
   end
 
 
@@ -78,7 +79,7 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:title, :description, :type, :quantity, :salary, :headquartes, :apply, :company_name, :url, :company_email)
+      params.require(:job).permit(:title, :description, :job_type, :quantity, :salary, :headquartes, :apply, :company_name, :url, :company_email)
     end
 
     def search_params

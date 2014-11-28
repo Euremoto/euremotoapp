@@ -1,11 +1,8 @@
-<section class="euremoto">
-  <p>O EuRemoto.com é o melhor lugar para você encontrar</p>
-</section>
 <section class="jobs">
   <article>
     <h2>Vagas para Programadores</h2>
     <ul>
-      <% @jobs.each do |job| %>
+      <% @programmers.each do |job| %>
       <li>
         <span class="new">New</span>
         <%= link_to job_path(job) do %>

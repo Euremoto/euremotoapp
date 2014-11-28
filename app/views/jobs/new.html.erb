@@ -13,7 +13,7 @@
 
 <%= simple_form_for @job, html: {class: 'form-horizontal'} do |f| %>
   <%= f.input :title, label: 'Título da vaga', placeholder: "Ex.: Desenvolvedor Ruby", input_html: { class: 'input-lg' } %>
-  <% f.input :type, label: 'Categoria', as: :radio_buttons, collection: [['Programação', 'programming'],['Designer', 'designer'], ['Executivo', 'exec'], ['Administrador de Sistemas', 'sysadmin'], ['Suporte', 'support'],['Redator', 'copywriter'], ['Outros', 'others']], checked: ['Programação', 'programming'] %>
+  <%= f.input :job_type, label: 'Categoria', as: :radio_buttons, collection: [['Programação', 'programming'],['Designer', 'designer'], ['Executivo', 'exec'], ['Administrador de Sistemas', 'sysadmin'], ['Suporte', 'support'],['Redator', 'copywriter'], ['Outros', 'others']], checked: ['Programação', 'programming'] %>
   <%= f.input :headquartes, label: 'Matriz', placeholder: 'Ex.: São Paulo, SP' %>
   <%= f.input :description, label: 'Descrição da vaga', as: :text %>
   <%= f.input :apply, label: 'Como se candidatar', placeholder: 'Ex.: `seu-email@seu-dominio.com` ou `www.seusite.com.br/candatar-se`' %>
