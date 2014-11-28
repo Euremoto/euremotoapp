@@ -1,17 +1,3 @@
-<section class="jobs">
-  <article>
-    <h2>Vagas para Programadores</h2>
-    <ul>
-      <% @programmers.each do |job| %>
-      <li>
-        <% if new_job? job %><span class="new">Novo</span><% end %>
-        <%= link_to job_path(job) do %>
-          <span class="company"><%= job.company_name %></span>
-          <span class="title"><%= job.title %></span>
-          <span class="date"><%= l job.created_at, format: :home %></span>
-        <% end %>
-      </li>
-      <% end %>
-    </ul>
-  </article>
-</section>
+<%= render partial: "jobs", locals: { jobs: @programmers, category: "Programadores"} %>
+
+<%= render partial: "jobs", locals: { jobs: @designers, category: "Designers"} %>
