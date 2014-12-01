@@ -19,12 +19,14 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'unicorn'
 gem 'simple_form'
+gem 'pg'
+gem 'pg_search'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :production do
-  gem 'pg'
+
 end
 
 group :development, :test do
