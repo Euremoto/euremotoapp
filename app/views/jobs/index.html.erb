@@ -1,3 +1,5 @@
-<%= render partial: "jobs", locals: { jobs: @programmers, category: "Programadores"} %>
+<%= render partial: "jobs", locals: { jobs: @programmers, category: "Programadores"} if @programmers %>
 
-<%= render partial: "jobs", locals: { jobs: @designers, category: "Designers"} %>
+<%= render partial: "jobs", locals: { jobs: @designers, category: "Designers"} if @designers %>
+
+<%= render partial: "jobs", locals: { jobs: @jobs, category: "Busca" } %>

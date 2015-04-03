@@ -1,18 +1,21 @@
 class Job < ActiveRecord::Base
+  include PgSearch
+
   has_and_belongs_to_many :tags
 
   default_scope { where(created_at: 1.month.ago .. Time.now).order(created_at: :desc) }
   scope :programmers, -> { where("job_type = 'programming'") }
   scope :designers, -> { where("job_type = 'designer'") }
+  pg_search_scope :search, against: [:title, :description, :company_name]
 
   validates_presence_of :title, :description, :apply, :company_name, :company_email
 
   before_save :generate_token
 
-  def self.search(search)
-    wildcard_search = "%#{search}%"
-    where("title LIKE ? OR description LIKE ?", wildcard_search, wildcard_search)
-  end
+  # def self.search(search)
+  #   wildcard_search = "%#{search}%"
+  #   where("title LIKE ? OR description LIKE ?", wildcard_search, wildcard_search)
+  # end
 
   def confirmed?
     confirm.present?

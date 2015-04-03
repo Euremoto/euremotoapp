@@ -13,7 +13,7 @@ class JobsController < ApplicationController
   # GET /search
   # GET /search.json
   def search
-    @jobs = Job.search(search_params[:q])
+    @jobs = Job.search(search_params[:q]) || []
     render "index"
   end
 
