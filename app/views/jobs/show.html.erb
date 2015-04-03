@@ -1,43 +1,44 @@
-<div class="page-header">
-  <h1><%= @job.title %> <small><%= @job.company_name %></small></h1>
-</div>
+<section id="job-resume">
+  <div class="page-header">
+    <h1><%= @job.title %> <small><%= @job.company_name %></small></h1>
+  </div>
 
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @job.title %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @job.title %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @job.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @job.description %>
+  </p>
 
-<p>
-  <strong>Type:</strong>
-  <%= @job.job_type %>
-</p>
+  <p>
+    <strong>Type:</strong>
+    <%= @job.job_type %>
+  </p>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @job.quantity %>
-</p>
+  <p>
+    <strong>Quantity:</strong>
+    <%= @job.quantity %>
+  </p>
 
-<p>
-  <strong>Salary:</strong>
-  <%= @job.salary %>
-</p>
+  <p>
+    <strong>Salary:</strong>
+    <%= @job.salary %>
+  </p>
 
-<p>
-  <strong>Headquartes:</strong>
-  <%= @job.headquartes %>
-</p>
+  <p>
+    <strong>Headquartes:</strong>
+    <%= @job.headquartes %>
+  </p>
 
-<p>
-  <strong>Apply:</strong>
-  <%= @job.apply %>
-</p>
+  <div id="apply-to-job">
+    <h4>Para se candidatar a oportunidade</h4>
+    <%= @job.apply %>
+  </div>
+</section>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+<%= link_to 'Ver todas vagas', jobs_path %>

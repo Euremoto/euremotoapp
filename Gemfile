@@ -21,6 +21,7 @@ gem 'unicorn'
 gem 'simple_form'
 gem 'pg'
 gem 'pg_search'
+gem 'rails_12factor'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
