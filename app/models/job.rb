@@ -10,7 +10,7 @@ class Job < ActiveRecord::Base
 
   validates_presence_of :title, :description, :apply, :company_name, :company_email
 
-  before_save :generate_token
+  before_save :generate_token, :slugify
 
   def confirmed?
     confirm.present?
@@ -18,6 +18,10 @@ class Job < ActiveRecord::Base
 
   private
     def generate_token
-      @token = SecureRandom.urlsafe_base64
+      self.token = SecureRandom.urlsafe_base64
+    end
+
+    def slugify
+      self.slug = "#{company_name.parameterize}-#{title.parameterize}".downcase
     end
 end

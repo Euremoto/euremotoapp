@@ -1,42 +1,46 @@
 <section id="job-resume">
   <div class="page-header">
     <h1><%= @job.title %> <small><%= @job.company_name %></small></h1>
+    <h5><%= @job.created_at.to_formatted_s(:short) %></h5>
   </div>
 
   <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Title:</strong>
-    <%= @job.title %>
-  </p>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-md-8">
+        <p>
+          <strong>Description:</strong>
+          <%= @job.description %>
+        </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= @job.description %>
-  </p>
+        <p>
+          <strong>Quantity:</strong>
+          <%= @job.quantity %>
+        </p>
 
-  <p>
-    <strong>Type:</strong>
-    <%= @job.job_type %>
-  </p>
+        <p>
+          <strong>Salary:</strong>
+          <%= @job.salary %>
+        </p>
 
-  <p>
-    <strong>Quantity:</strong>
-    <%= @job.quantity %>
-  </p>
+        <p>
+          <strong>Headquartes:</strong>
+          <%= @job.headquartes %>
+        </p>
+      </div>
 
-  <p>
-    <strong>Salary:</strong>
-    <%= @job.salary %>
-  </p>
+      <div class="col-xs-6 col-md-4">
+        <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+        <a href="mailto:?body=bla bla">Indique para um amigo</a>
+        <hr>
+      </div>
 
-  <p>
-    <strong>Headquartes:</strong>
-    <%= @job.headquartes %>
-  </p>
+    </div>
+  </div>
 
   <div id="apply-to-job">
-    <h4>Para se candidatar a oportunidade</h4>
+    <h4>Para se candidatar a oportunidade:</h4>
     <%= @job.apply %>
   </div>
 </section>

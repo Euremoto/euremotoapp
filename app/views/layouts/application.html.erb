@@ -22,21 +22,17 @@
     <![endif]-->
   </head>
   <body>
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">
-            EuRemoto.com
-          </a>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <%= link_to 'Publicar Vaga', new_job_path %>
-          </li>
-        </ul>
 
+    <div class="container-fluid" id="header">
+      <div class="row">
+        <div class="col-xs-12 col-md-8">
+          <%= link_to(image_tag("euremoto-logo.png"), root_path) %>
+        </div>
+        <div class="col-xs-6 col-md-4 vertical-center">
+          <%= link_to 'Publicar Vaga', new_job_path %>
+        </div>
       </div>
-    </nav>
+    </div>
 
     <section id="content">
       <div class="container-fluid">

@@ -5,7 +5,7 @@
       <% jobs.each do |job| %>
       <li>
         <% if new_job? job %><span class="new">Novo</span><% end %>
-        <%= link_to job_path(job) do %>
+        <%= link_to "/trampo/#{job.slug}" do %>
           <span class="company"><%= job.company_name %></span>
           <span class="title"><%= job.title %></span>
           <span class="date"><%= l job.created_at, format: :home %></span>

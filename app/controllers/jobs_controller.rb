@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :set_job, only: [:edit, :update, :destroy]
 
   # GET /jobs
   # GET /jobs.json
@@ -21,6 +21,7 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+    @job ||= Job.where(slug: params[:id]).first
   end
 
   # GET /jobs/new
@@ -80,7 +81,7 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:title, :description, :job_type, :quantity, :salary, :headquartes, :apply, :company_name, :url, :company_email)
+      params.require(:job).permit(:title, :description, :job_type, :quantity, :salary, :headquartes, :apply, :company_name, :url, :company_email, :slug, :token)
     end
 
     def search_params

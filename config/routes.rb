@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'jobs#index'
+  match '/trampo/:slug' => 'jobs#show', via: [:get, :post]
   match '/search' => 'jobs#search', via: [:get, :post]
 
   # Example of regular route:
