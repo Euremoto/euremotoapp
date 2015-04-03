@@ -12,11 +12,6 @@ class Job < ActiveRecord::Base
 
   before_save :generate_token
 
-  # def self.search(search)
-  #   wildcard_search = "%#{search}%"
-  #   where("title LIKE ? OR description LIKE ?", wildcard_search, wildcard_search)
-  # end
-
   def confirmed?
     confirm.present?
   end
