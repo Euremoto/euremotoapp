@@ -4,7 +4,6 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    # @jobs = Job.all
     @programmers = Job.programmers.limit(5)
     @designers = Job.designers.limit(5)
   end
