@@ -36,9 +36,9 @@ class JobsController < ApplicationController
   # POST /jobs.json
   def create
     @job = Job.new(job_params)
-    ConfirmMailer.confirm_email(@job).deliver_later
     respond_to do |format|
       if @job.save
+        ConfirmMailer.confirm_email(@job).deliver_now
         format.html { redirect_to @job, notice: 'Job was successfully created.' }
         format.json { render :show, status: :created, location: @job }
       else
