@@ -16,9 +16,13 @@ class Job < ActiveRecord::Base
     confirm.present?
   end
 
+  def confirm
+    self.confirm = Time.now
+  end
+
   private
     def generate_token
-      self.token = SecureRandom.urlsafe_base64
+      self.token = SecureRandom.urlsafe_base64 if self.token.nil?
     end
 
     def slugify

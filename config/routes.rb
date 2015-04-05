@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   match '/trampo/:slug' => 'jobs#show', via: [:get, :post]
   match '/search' => 'jobs#search', via: [:get, :post]
 
+  match '/active' => 'security#active', via: [:get]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

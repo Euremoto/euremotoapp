@@ -20,7 +20,7 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
-    @job ||= Job.where(slug: params[:id]).first
+    @job = Job.where(slug: params[:id]).first
   end
 
   # GET /jobs/new
