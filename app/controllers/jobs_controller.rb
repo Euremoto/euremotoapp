@@ -20,7 +20,7 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
-    @job = Job.where(slug: params[:id]).first
+    @job = Job.where(slug: params[:id]).first || set_job
   end
 
   # GET /jobs/new
@@ -38,7 +38,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     respond_to do |format|
       if @job.save
-        ConfirmMailer.confirm_email(@job).deliver_now
+        ConfirmMailer.confirm_email(@job).deliver
         format.html { redirect_to @job, notice: 'Job was successfully created.' }
         format.json { render :show, status: :created, location: @job }
       else
