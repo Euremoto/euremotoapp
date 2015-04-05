@@ -36,7 +36,7 @@ class JobsController < ApplicationController
   # POST /jobs.json
   def create
     @job = Job.new(job_params)
-
+    ConfirmMailer.confirm_email(@job).deliver_later
     respond_to do |format|
       if @job.save
         format.html { redirect_to @job, notice: 'Job was successfully created.' }
@@ -64,13 +64,13 @@ class JobsController < ApplicationController
 
   # DELETE /jobs/1
   # DELETE /jobs/1.json
-  def destroy
-    @job.destroy
-    respond_to do |format|
-      format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @job.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
