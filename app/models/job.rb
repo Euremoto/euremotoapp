@@ -6,6 +6,7 @@ class Job < ActiveRecord::Base
   default_scope { where(created_at: 1.month.ago .. Time.now).order(created_at: :desc) }
   scope :programmers, -> { where("job_type = 'programming'") }
   scope :designers, -> { where("job_type = 'designer'") }
+  scope :slug, -> (slug) { where('slug = ?', slug).first }
   pg_search_scope :search, against: [:title, :description, :company_name]
 
   validates_presence_of :title, :description, :apply, :company_name, :company_email
