@@ -1,7 +1,7 @@
 <section id="job-resume">
   <div class="page-header">
     <h1><%= @job.title %> <small><%= @job.company_name %></small></h1>
-    <h5><%= @job.created_at.to_formatted_s(:short) %></h5>
+    <h5><%= l @job.created_at, format: :home %></h5>
   </div>
 
   <p id="notice"><%= notice %></p>
@@ -10,22 +10,26 @@
     <div class="row">
       <div class="col-xs-12 col-md-8">
         <p>
-          <strong>Description:</strong>
-          <%= @job.description %>
+          <strong>Descrição do Trampo:</strong>
+          <%= simple_format @job.description %>
         </p>
 
+        <% if @job.quantity %>
         <p>
-          <strong>Quantity:</strong>
+          <strong>Quantidade de vagas:</strong>
           <%= @job.quantity %>
         </p>
+        <% end %>
 
+        <% if @job.salary %>
         <p>
-          <strong>Salary:</strong>
+          <strong>Salário:</strong>
           <%= @job.salary %>
         </p>
+        <% end %>
 
         <p>
-          <strong>Headquartes:</strong>
+          <strong>Local da empresa:</strong>
           <%= @job.headquartes %>
         </p>
       </div>
