@@ -13,6 +13,9 @@ gem 'simple_form'
 gem 'pg'
 gem 'pg_search'
 gem 'rails_12factor'
+gem 'inherited_resources', github: 'josevalim/inherited_resources'
+gem 'devise'
+gem 'activeadmin', github: 'activeadmin'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :production do
