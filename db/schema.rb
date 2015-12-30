@@ -47,21 +47,21 @@ ActiveRecord::Schema.define(version: 20151014115238) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
   create_table "jobs", force: :cascade do |t|
-    t.string   "title",         limit: 255
+    t.string   "title"
     t.text     "description"
-    t.string   "job_type",      limit: 255
+    t.string   "job_type"
     t.integer  "quantity"
     t.integer  "salary"
-    t.string   "headquartes",   limit: 255
-    t.string   "apply",         limit: 255
+    t.string   "headquartes"
+    t.string   "apply"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "token",         limit: 255
+    t.string   "token"
     t.time     "confirm"
-    t.string   "company_name",  limit: 255
-    t.string   "url",           limit: 255
-    t.string   "company_email", limit: 255
-    t.string   "slug",          limit: 255
+    t.string   "company_name"
+    t.string   "url"
+    t.string   "company_email"
+    t.string   "slug"
   end
 
   create_table "jobs_tags", id: false, force: :cascade do |t|
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20151014115238) do
   end
 
   create_table "tags", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,5 +1,5 @@
 class Job < ActiveRecord::Base
-  include PgSearch
+  # include PgSearch
 
   has_and_belongs_to_many :tags
 
@@ -7,7 +7,7 @@ class Job < ActiveRecord::Base
   scope :programmers, -> { where("job_type = 'programming'") }
   scope :designers, -> { where("job_type = 'designer'") }
   scope :slug, -> (slug) { where('slug = ?', slug).first }
-  pg_search_scope :search, against: [:title, :description, :company_name]
+  # pg_search_scope :search, against: [:title, :description, :company_name]
 
   validates_presence_of :title, :description, :apply, :company_name, :company_email
 
