@@ -39,11 +39,17 @@ span.card-title {
   line-height: 2em;
 }
 
+.enterprise {
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: .9em;
+}
+
 .upcoming-event {
   padding: 0em 0;
 }
 
-.upcoming-event .date-local {
+.upcoming-event {
   margin: 2em 0 0 0;
   font-weight: 400;
   font-size: 1.2em;
@@ -90,12 +96,6 @@ a.past-events-btn{
 
 .past-events .label {
   margin: 1em 0
-}
-
-.date-local {
-  font-weight: 400;
-  font-size: .9em;
-  margin: 0;
 }
 
 .btn-flat {

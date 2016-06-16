@@ -1215,7 +1215,8 @@ h5 {
   font-size: 1.0625rem; }
 
 h6 {
-  font-size: 1rem; }
+  font-size: 1rem;
+}
 
 @media screen and (min-width: 40em) {
   h1 {
@@ -2169,7 +2170,7 @@ select {
 .label {
   display: inline-block;
   padding: 0.33333rem 0.5rem;
-  font-size: 0.8rem;
+  /*font-size: 0.8rem;*/
   line-height: 1;
   white-space: nowrap;
   cursor: default;
