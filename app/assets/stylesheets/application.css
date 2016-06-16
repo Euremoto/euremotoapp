@@ -15,4 +15,8 @@
  *= require job
  *= require main
  *= require search
+ *= require materialize
+ *= require grid-materialize
+ *= require foundation
+ *= require app
  */

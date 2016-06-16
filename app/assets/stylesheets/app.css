@@ -1,0 +1,149 @@
+.menu {
+  /*background-color: #46BBAB;*/
+}
+
+.btn .btn-large {
+  background-color: #46BBAB;
+}
+
+.card {
+  background-color: #F3F3F3;
+}
+
+.featured {
+  background-color: #FFC65F !important;
+}
+
+span.card-title {
+  color: #005449;
+}
+
+.header {
+  padding: 2em 0 0;
+}
+
+/*.content {color: #858585;font-weight: 300;}*/
+p {
+  font-size: 19px;
+  margin: 0 2em 1em 0;
+}
+
+span.card-title {
+  font-size: 36px;
+  color: #272727;
+  line-height: 2em;
+}
+
+.upcoming-event {
+  padding: 0em 0;
+}
+
+.upcoming-event .date-local {
+  margin: 2em 0 0 0;
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+.upcoming-event .event-name {
+  font-size: 1.2em;
+  margin: 0;
+  line-height: 1.2em;
+  font-weight: 400;
+  margin-top: 1em;
+}
+
+.upcoming-event .event-theme {
+  font-size: 2em;
+  margin: 0;
+  line-height: 1.2em;
+  font-weight: 400;
+}
+
+.upcoming-event span.text-btn {
+  position: relative;
+  bottom: 4px;
+}
+
+.upcoming-event .btn-large {
+  margin: 1.6em 0;
+  position: absolute;
+  bottom: 0
+}
+
+a.past-events-btn{
+  margin: 0 auto 2em;
+  display: block;
+}
+
+.box{
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+  /* border-bottom: 4px solid #C1C1C1; */
+  /* height: 200px; */
+  padding: 0em 1em;
+}
+
+.past-events .label {
+  margin: 1em 0
+}
+
+.date-local {
+  font-weight: 400;
+  font-size: .9em;
+  margin: 0;
+}
+
+.btn-flat {
+  margin-top: 2.3em;
+}
+
+.event-name {
+  font-size: 1.2em;
+  margin: 0;
+  line-height: 1.2em;
+  font-weight: 400;
+  margin-top: .5em;
+}
+
+.event-theme {
+  font-size: 1.4em; margin: 0;
+  line-height: 1.2em;
+  font-weight: 400;
+}
+
+/*for mobile*/
+@media only screen and (max-width: 690px) {
+	.upcoming-event img {
+    display: none;
+  }
+
+	.upcoming-event .event-theme {
+    font-size: 1.6em;
+  }
+
+  .upcoming-event .btn-large {
+    margin: 1.6em 0;
+    position: relative;
+  }
+
+	.logo-spot .menu ul{
+    text-align: left;
+    background-color: #101010;
+    margin: 0;
+    display: none;
+  }
+
+	.logo-spot .menu ul li{
+    display: block;
+    padding: .6em 1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-right:0;
+  }
+
+	.logo-spot .menu ul li a {
+    color: #fff;
+    padding: 0;
+    display: block;
+    font-size: 1em;
+  }
+}

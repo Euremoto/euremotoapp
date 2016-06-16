@@ -23,37 +23,93 @@
   </head>
   <body>
 
-    <div class="container-fluid" id="header">
-      <div class="row">
-        <div class="col-xs-12 col-md-8">
-          <%= link_to(image_tag("euremoto-logo.png"), root_path) %>
+    <section class="container">
+      <div class="container menu" id="header">
+        <div class="row">
+          <div class="col-xs-12 col-md-8">
+            <%= link_to(image_tag("euremoto-logo.png"), root_path) %>
+          </div>
+          <div class="col-xs-6 col-md-4 vertical-center">
+            <%= link_to 'Publicar Vaga', new_job_path %>
+          </div>
         </div>
-        <div class="col-xs-6 col-md-4 vertical-center">
-          <%= link_to 'Publicar Vaga', new_job_path %>
-        </div>
-      </div>
-    </div>
-
-    <section id="content">
-      <div class="container-fluid">
-
         <div class="row">
           <section class="search">
             <%= form_tag "/search" do |f| %>
-              <div class="input-group">
-                <%= text_field_tag 'q','', {type: "search", id:"search", class: 'form-control input-lg', placeholder: "buscar: Ruby, Photoshop ..."} %>
-                <span class="input-group-btn"><%= button_tag "Buscar", { class: 'btn btn-lg btn-primary' } %></span>
-              </div>
+            <div class="input-group">
+              <%= text_field_tag 'q','', {type: "search", id:"search", class: 'form-control input-lg', placeholder: "buscar: Ruby, Photoshop ..."} %>
+              <span class="input-group-btn"><%= button_tag "Buscar", { class: 'btn btn-lg btn-primary' } %></span>
+            </div>
             <% end %>
           </section>
         </div>
+      </div>
+
+      <div class="container">
 
         <div class="row">
-          <div class="col-xs-6 col-md-1"></div>
           <div class="col-xs-6 col-md-10"><%= yield %></div>
-          <div class="col-xs-6 col-md-1"></div>
         </div>
+
+        <div class="past-events-list">
+
+          <div class="row">
+            <div class="large-10 small-12 small-centered columns">
+              <a class="waves-effect waves-light btn-large lighten-2 past-events-btn large-6">Vagas disponíveis</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-10 small-12 small-centered columns">
+              <div class="large-6 columns">
+                <div class="card box featured">
+                  <div class="label">Mobile</div>
+                  <div class="label">Android</div>
+                  <p class="date-local">Empresa: <a href="#" target="_blank" alt="Site da Empresa">Moip</a></p>
+                  <p class="event-theme">Nome da Vaga</p>
+                  <p class="event-name">Breve descrição da vaga</p>
+                  <a class="waves-effect waves-blue-grey btn-flat" href="#" target="_blank">Saiba mais</a>
+                </div>
+              </div>
+              <div class="large-6 columns">
+                <div class="card box featured">
+                  <div class="label">Web</div>
+                  <div class="label">Ruby</div>
+                  <div class="label">JavaScript</div>
+                  <p class="date-local">Empresa: <a href="#" target="_blank" alt="Site da Empresa">EuRemoto</a></p>
+                  <p class="event-theme">Nome da Vaga</p>
+                  <p class="event-name">Breve descrição da vaga</p>
+                  <a class="waves-effect waves-blue-grey btn-flat" href="#" target="_blank">Saiba mais</a>
+                </div>
+              </div>
+              <div class="large-6 columns">
+                <div class="card box">
+                  <div class="label">Web</div>
+                  <div class="label">Ruby</div>
+                  <div class="label">JavaScript</div>
+                  <p class="date-local">Empresa: <a href="#" target="_blank" alt="Site da Empresa">EuRemoto</a></p>
+                  <p class="event-theme">Nome da Vaga</p>
+                  <p class="event-name">Breve descrição da vaga</p>
+                  <a class="waves-effect waves-blue-grey btn-flat" href="#" target="_blank">Saiba mais</a>
+                </div>
+              </div>
+              <div class="large-6 columns">
+                <div class="card box">
+                  <div class="label">Web</div>
+                  <div class="label">Ruby</div>
+                  <div class="label">JavaScript</div>
+                  <p class="date-local">Empresa: <a href="#" target="_blank" alt="Site da Empresa">EuRemoto</a></p>
+                  <p class="event-theme">Nome da Vaga</p>
+                  <p class="event-name">Breve descrição da vaga</p>
+                  <a class="waves-effect waves-blue-grey btn-flat" href="#" target="_blank">Saiba mais</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
+
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
