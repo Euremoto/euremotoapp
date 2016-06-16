@@ -2,16 +2,21 @@
   /*background-color: #46BBAB;*/
 }
 
+.label {
+  background-color: #F95D6C;
+}
+
 .btn .btn-large {
   background-color: #46BBAB;
 }
 
 .card {
-  background-color: #F3F3F3;
+  background-color: #99FFCB;
+  min-height: 190px;
 }
 
 .featured {
-  background-color: #FFC65F !important;
+  background-color: #33CC9A !important;
 }
 
 span.card-title {
