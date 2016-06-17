@@ -2,24 +2,32 @@
   /*background-color: #46BBAB;*/
 }
 
-.label {
+.section.top {
+  background-color: #33CC9A !important;
+  color: white;
+}
+
+.chip.color {
   background-color: #F95D6C;
+  font-weight: bold;
+  color: white;
+  margin: 5px 0px 0px 0px;
 }
 
 .btn .btn-large {
   background-color: #46BBAB;
 }
 
-.card {
+.card.card-job {
   background-color: #99FFCB;
-  min-height: 190px;
+  min-height: 200px;
 }
 
 .featured {
   background-color: #33CC9A !important;
 }
 
-span.card-title {
+.card-title {
   color: #005449;
 }
 
@@ -55,7 +63,7 @@ span.card-title {
   font-size: 1.2em;
 }
 
-.upcoming-event .event-name {
+.upcoming-event .job-description {
   font-size: 1.2em;
   margin: 0;
   line-height: 1.2em;
@@ -63,7 +71,7 @@ span.card-title {
   margin-top: 1em;
 }
 
-.upcoming-event .event-theme {
+.upcoming-event .job-name {
   font-size: 2em;
   margin: 0;
   line-height: 1.2em;
@@ -102,18 +110,18 @@ a.past-events-btn{
   margin-top: 2.3em;
 }
 
-.event-name {
-  font-size: 1.2em;
+p.job-name {
+  font-size: 1.4em;
   margin: 0;
   line-height: 1.2em;
   font-weight: 400;
-  margin-top: .5em;
 }
 
-.event-theme {
-  font-size: 1.4em; margin: 0;
-  line-height: 1.2em;
-  font-weight: 400;
+p.job-description {
+  font-size: 1.0em;
+  margin: 0;
+  line-height: 1.1em;
+  // @extend .blue-text, .text-lighten-4;
 }
 
 /*for mobile*/
@@ -122,7 +130,7 @@ a.past-events-btn{
     display: none;
   }
 
-	.upcoming-event .event-theme {
+	.upcoming-event .job-name {
     font-size: 1.6em;
   }
 

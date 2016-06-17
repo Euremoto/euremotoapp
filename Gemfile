@@ -17,6 +17,7 @@ gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'materialize-sass'
 
 group :production do
 

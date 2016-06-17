@@ -14,8 +14,16 @@
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css"> -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -23,35 +31,53 @@
   </head>
   <body>
 
-    <section class="container">
-      <div class="container menu" id="header">
+    <div class="section top" id="index-banner">
+      <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-md-8">
-            <%= link_to(image_tag("euremoto-logo.png"), root_path) %>
+          <div class="col s12 m9">
+            <h1 class="header center-on-small-only">EUREMOTO.com</h1>
+            <h4 class="text-lighten-4 center-on-small-only">Porque podemos trabalhar de qualquer lugar</h4>
           </div>
-          <div class="col-xs-6 col-md-4 vertical-center">
+          <div class="col s12 m3">
             <%= link_to 'Publicar Vaga', new_job_path %>
           </div>
-        </div>
-        <div class="row">
-          <section class="search">
-            <%= form_tag "/search" do |f| %>
-            <div class="input-group">
-              <%= text_field_tag 'q','', {type: "search", id:"search", class: 'form-control input-lg', placeholder: "buscar: Ruby, Photoshop ..."} %>
-              <span class="input-group-btn"><%= button_tag "Buscar", { class: 'btn btn-lg' } %></span>
+          <div class="row">
+            <section class="search">
+              <%= form_tag "/search" do |f| %>
+              <div class="input-group">
+                <%= text_field_tag 'q','', {
+                  type: "search",
+                  id:"search",
+                  class: 'form-control input-lg',
+                    placeholder: "buscar: Ruby, Photoshop ..."
+                    } %>
+                    <span class="input-group-btn"><%= button_tag "Buscar", { class: 'btn btn-lg' } %></span>
+                  </div>
+                <% end %>
+              </section>
             </div>
-            <% end %>
-          </section>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="container">
+    <section class="container">
+      <!-- <div class="menu" id="header">
+
+          <div class="search-wrapper card">
+            <input id="search"><i class="material-icons">search</i>
+            <div class="search-results"></div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="">
 
         <div class="row">
           <div class="col-xs-6 col-md-10"><%= yield %></div>
         </div>
 
-        <div class="past-events-list">
+        <div class="job-list">
 
           <div class="row">
             <div class="large-10 small-12 small-centered columns">
@@ -62,45 +88,45 @@
           <div class="row">
             <div class="large-10 small-12 small-centered columns">
               <div class="large-6 columns">
-                <div class="card box featured">
-                  <div class="label">Mobile</div>
-                  <div class="label">Android</div>
+                <div class="card card-job box featured">
+                  <div class="chip color">Mobile</div>
+                  <div class="chip color">Android</div>
                   <p class="enterprise">Empresa: <a href="#" target="_blank" alt="Site da Empresa">Moip</a></p>
-                  <p class="event-theme">Nome da Vaga</p>
-                  <p class="event-name">Breve descrição da vaga</p>
+                  <p class="job-name card-title">Desenvolvedor Android</p>
+                  <p class="job-description">Breve descrição da vaga</p>
                   <a class="waves-effect waves-blue-grey btn-flat" href="#" target="_blank">Saiba mais</a>
                 </div>
               </div>
               <div class="large-6 columns">
-                <div class="card box featured">
-                  <div class="label">Web</div>
-                  <div class="label">Ruby</div>
-                  <div class="label">JavaScript</div>
+                <div class="card card-job box featured">
+                  <div class="chip color">Web</div>
+                  <div class="chip color">Ruby</div>
+                  <div class="chip color">JavaScript</div>
                   <p class="enterprise">Empresa: <a href="#" target="_blank" alt="Site da Empresa">EuRemoto</a></p>
-                  <p class="event-theme">EuRemoto Web</p>
-                  <p class="event-name">Desenvolvimento da aplicação EuRemoto para Web utilizando Ruby</p>
+                  <p class="job-name card-title">EuRemoto Web</p>
+                  <p class="job-description">Desenvolvimento da aplicação EuRemoto para Web utilizando Ruby</p>
                   <a class="waves-effect waves-blue-grey btn-flat" href="#" target="_blank">Saiba mais</a>
                 </div>
               </div>
               <div class="large-6 columns">
-                <div class="card box">
-                  <div class="label">API</div>
-                  <div class="label">Java</div>
-                  <div class="label">Python</div>
+                <div class="card card-job box">
+                  <div class="chip color">API</div>
+                  <div class="chip color">Java</div>
+                  <div class="chip color">Python</div>
                   <p class="enterprise">Empresa: <a href="#" target="_blank" alt="Site da Empresa">Exemplo.com</a></p>
-                  <p class="event-theme">Nome da Vaga</p>
-                  <p class="event-name">Breve descrição da vaga</p>
+                  <p class="job-name card-title">Nome da Vaga</p>
+                  <p class="job-description">Breve descrição da vaga</p>
                   <a class="waves-effect waves-blue-grey btn-flat" href="#" target="_blank">Saiba mais</a>
                 </div>
               </div>
               <div class="large-6 columns">
-                <div class="card box">
-                  <div class="label">Web</div>
-                  <div class="label">Ruby</div>
-                  <div class="label">JavaScript</div>
+                <div class="card card-job box">
+                  <div class="chip color">Web</div>
+                  <div class="chip color">Ruby</div>
+                  <div class="chip color">JavaScript</div>
                   <p class="enterprise">Empresa: <a href="#" target="_blank" alt="Site da Empresa">EuRemoto</a></p>
-                  <p class="event-theme">Nome da Vaga</p>
-                  <p class="event-name">Breve descrição da vaga</p>
+                  <p class="job-name card-title">Desenvolvedor Front-end</p>
+                  <p class="job-description">Breve descrição da vaga</p>
                   <a class="waves-effect waves-blue-grey btn-flat" href="#" target="_blank">Saiba mais</a>
                 </div>
               </div>
