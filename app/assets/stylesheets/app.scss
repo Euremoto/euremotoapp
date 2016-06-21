@@ -1,9 +1,19 @@
+$lightercolor: #FFD9C9;
+$lightcolor: #99FFCB;
+$maincolor: #33CC9A;
+$darkcolor: #26a69a;
+$darkercolor: #005449;
+
+html {
+  background-color: $lightercolor;
+}
+
 .menu {
   /*background-color: #46BBAB;*/
 }
 
 .section.top {
-  background-color: #33CC9A !important;
+  background-color: $maincolor !important;
   color: white;
 }
 
@@ -14,21 +24,24 @@
   margin: 5px 0px 0px 0px;
 }
 
-.btn .btn-large {
-  background-color: #46BBAB;
+.btn-large, .btn {
+  background-color: $darkcolor !important;
 }
 
 .card.card-job {
-  background-color: #99FFCB;
+  background-color: $lightcolor;
   min-height: 200px;
+  p {
+    color: $darkercolor;
+  }
 }
 
 .featured {
-  background-color: #33CC9A !important;
+  background-color: $maincolor !important;
 }
 
 .card-title {
-  color: #005449;
+  color: $darkercolor;
 }
 
 .header {
@@ -126,11 +139,11 @@ p.job-description {
 
 /*for mobile*/
 @media only screen and (max-width: 690px) {
-	.upcoming-event img {
+  .upcoming-event img {
     display: none;
   }
 
-	.upcoming-event .job-name {
+  .upcoming-event .job-name {
     font-size: 1.6em;
   }
 
@@ -139,21 +152,21 @@ p.job-description {
     position: relative;
   }
 
-	.logo-spot .menu ul{
+  .logo-spot .menu ul{
     text-align: left;
     background-color: #101010;
     margin: 0;
     display: none;
   }
 
-	.logo-spot .menu ul li{
+  .logo-spot .menu ul li{
     display: block;
     padding: .6em 1em;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     margin-right:0;
   }
 
-	.logo-spot .menu ul li a {
+  .logo-spot .menu ul li a {
     color: #fff;
     padding: 0;
     display: block;
