@@ -7,12 +7,42 @@
 <h4>Para isso precisamos de algumas informações.</h4>
 
 <% if @job.errors.any? %>
-  <div class="alert alert-danger" role="alert">Ops ... Precisamos corrigir alguns coisas ...</div>
+  <div class="alert alert-danger" role="alert">Ops! Precisamos corrigir alguns coisas...</div>
 <% end %>
 
 <%= simple_form_for @job, html: {class: 'form-horizontal'} do |f| %>
   <%= f.input :title, label: 'Título da vaga', placeholder: "Ex.: Desenvolvedor Ruby", input_html: { class: 'input-lg' } %>
-  <%= f.input :job_type, label: 'Categoria', as: :radio_buttons, collection: [['Programação', 'programming'],['Designer', 'designer'], ['Executivo', 'exec'], ['Administrador de Sistemas', 'sysadmin'], ['Suporte', 'support'],['Redator', 'copywriter'], ['Outros', 'others']], checked: ['Programação', 'programming'] %>
+
+  <label>Categoria</label>
+  <p>
+    <%= f.radio_button :job_type, 'programming', checked: true %>
+    <%= label :job_type, 'Programação' %>
+  </p>
+  <p>
+    <%= f.radio_button :job_type, 'designer' %>
+    <%= label :job_type, 'Designer' %>
+  </p>
+  <p>
+    <%= f.radio_button :job_type, 'exec' %>
+    <%= label :job_type, 'Executivo' %>
+  </p>
+  <p>
+    <%= f.radio_button :job_type, 'sysadmin' %>
+    <%= label :job_type, 'Admministrador de Sistemas' %>
+  </p>
+  <p>
+    <%= f.radio_button :job_type, 'support' %>
+    <%= label :job_type, 'Suporte' %>
+  </p>
+  <p>
+    <%= f.radio_button :job_type, 'copywriter' %>
+    <%= label :job_type, 'Redator' %>
+  </p>
+  <p>
+    <%= f.radio_button :job_type, 'others' %>
+    <%= label :job_type, 'Outros' %>
+  </p>
+
   <%= f.input :headquartes, label: 'Matriz', placeholder: 'Ex.: São Paulo, SP' %>
   <%= f.input :description, label: 'Descrição da vaga', as: :text %>
   <%= f.input :apply, label: 'Como se candidatar', placeholder: 'Ex.: `seu-email@seu-dominio.com` ou `www.seusite.com.br/candatar-se`' %>
