@@ -1,20 +1,29 @@
-<section class="jobs">
-  <article>
-    <h2>Vagas para <%= category %></h2>
-    <ul>
-      <% jobs.each do |job| %>
-      <li>
-        <% if new_job? job %><span class="new">Novo</span><% end %>
-        <%= link_to "/trampo/#{job.slug}" do %>
-          <span class="company"><%= job.company_name %></span>
-          <span class="title"><%= job.title %></span>
-          <span class="date"><%= l job.created_at, format: :home %></span>
-        <% end %>
-      </li>
-      <% end %>
-    </ul>
-    <div>
-      <a href="#">Ver todas vagas para <%= category %></a>
+
+<div class="row margin-top-15">
+  <div class="large-10 small-12 small-centered columns">
+    <a class="waves-effect waves-light btn-large lighten-2 past-events-btn large-6">Vagas para <%= category %></a>
+  </div>
+</div>
+
+<div class="row">
+  <% jobs.each do |job| %>
+    <div class="large-10 small-12 small-centered columns">
+      <div class="large-6 columns">
+        <div class="card card-job box">
+          <% if new_job? job %><div class="chip color">Novo</div><% end %>
+          <div class="chip color">Mobile</div>
+          <div class="chip color">Android</div>
+          <p class="enterprise">Empresa: <a href="#" target="_blank" alt="Site da Empresa"><%= job.company_name %></a></p>
+          <p class="job-name card-title"><%= job.title %></p>
+          <p class="job-description"><%= simple_format job.description %></p>
+          <p class="date"><%= l job.created_at, format: :home %></p>
+          <%= link_to "Saiba mais", "/trampo/#{job.slug}", class: "waves-effect btn-flat" %>
+        </div>
+      </div>
     </div>
-  </article>
-</section>
+  <% end %>
+</div>
+
+<div class="row">
+  <a href="#">Ver todas vagas para <%= category %></a>
+</div>

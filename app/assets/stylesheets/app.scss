@@ -1,4 +1,4 @@
-$lightercolor: #FFD9C9;
+$lightercolor: #FFD9C9 !default;
 $lightcolor: #99FFCB;
 $maincolor: #33CC9A;
 $darkcolor: #26a69a;
@@ -10,6 +10,14 @@ html {
 
 .menu {
   /*background-color: #46BBAB;*/
+}
+
+.margin-top-15 {
+  margin-top: 15px;
+}
+
+.job-list {
+  background-color: $lightercolor;
 }
 
 .section.top {
@@ -33,6 +41,9 @@ html {
   min-height: 200px;
   p {
     color: $darkercolor;
+  }
+  a {
+    color: white;
   }
 }
 
